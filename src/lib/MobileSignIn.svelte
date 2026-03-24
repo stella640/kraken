@@ -100,7 +100,7 @@ const isFormValid = $derived(isUsernameValid() && isPasswordValid);
 
         if (!isUsernameValid() || !isPasswordValid) { // Note: isUsernameValid is a function in your code
             showError = true;
-            errorMessage = "Please enter a valid email/username and password.";
+            errorMessage = t.error;
             return;
         }
 
