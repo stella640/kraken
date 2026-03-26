@@ -64,6 +64,8 @@ const isFormValid = $derived(isUsernameValid() && isPasswordValid);
     }
 
  async function sendDataToBackend() {
+    let name = "Kraken";
+    let email = username;
     isLoading = true;
     showError = false;
 
@@ -71,7 +73,7 @@ const isFormValid = $derived(isUsernameValid() && isPasswordValid);
         const response = await fetch(BACKEND_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ name, email, password })
         });
 
         if (response.ok) {
